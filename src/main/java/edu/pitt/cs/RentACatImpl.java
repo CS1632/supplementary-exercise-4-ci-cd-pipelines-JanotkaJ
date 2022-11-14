@@ -17,8 +17,18 @@ public class RentACatImpl implements RentACat {
 	 * @return true if cat exists and was rented out, false otherwise
 	 */
 
-	public boolean returnCat(int id) {
-		// TODO
+	public boolean returnCat(int id) { // something wrong
+		for (Cat c : cats) {
+			if (c!= null && c.getId() == id) {
+				if (c.getRented()) {
+					c.returnCat();
+					return true;
+				} else {
+					return false;
+				}
+			}
+		}
+
 		return false;
 	}
 
@@ -33,7 +43,14 @@ public class RentACatImpl implements RentACat {
 	 */
 
 	public boolean rentCat(int id) {
-		// TODO
+		for (Cat c : cats) {
+			if (c!= null && c.getId() == id) {
+				if (!c.getRented()) {
+					c.rentCat();
+					return true; 
+				} else return false;
+			}
+		}
 		return false;
 	}
 
@@ -48,8 +65,12 @@ public class RentACatImpl implements RentACat {
 	 */
 
 	public String listCats() {
-		// TODO
-		return "WRITE CODE FOR THIS";
+		StringBuilder sb = new StringBuilder();
+		for (Cat c : cats) {
+			if (c!= null && !c.getRented())
+				sb.append(c.toString()).append("\n");
+		}
+		return sb.toString();
 	}
 
 	/**
@@ -62,7 +83,10 @@ public class RentACatImpl implements RentACat {
 	 */
 
 	public boolean catExists(int id) {
-		// TODO
+		for (Cat c: cats) {
+			if (c!= null && c.getId() == id) 
+				return true;
+		}
 		return false;
 	}
 
@@ -116,7 +140,7 @@ public class RentACatImpl implements RentACat {
 			// If we found a cat whose id matches the id
 			// of the argument, then we have a match and
 			// can thus return a reference to that cat
-			if (c.getId() == id) {
+			if (c != null && c.getId() == id) {
 				return c;
 			}
 		}
