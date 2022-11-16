@@ -28,9 +28,9 @@
   </developers>
 
   <scm>
-    <connection>scm:git:git://github.com/wonsunahn/CS1632_CICD_JUnit.git</connection>
-    <developerConnection>scm:git:ssh://github.com:wonsunahn/CS1632_CICD_JUnit.git</developerConnection>
-    <url>http://github.com/wonsunahn/CS1632_CICD_JUnit/tree/master</url>
+    <connection>scm:git:git://github.com/JanotkaJ/CS1632_CICD_JUnit.git</connection>
+    <developerConnection>scm:git:ssh://github.com:JanotkaJ/CS1632_CICD_JUnit.git</developerConnection>
+    <url>http://github.com/JanotkaJ/CS1632_CICD_JUnit/tree/master</url>
    </scm>
   
   <distributionManagement>
